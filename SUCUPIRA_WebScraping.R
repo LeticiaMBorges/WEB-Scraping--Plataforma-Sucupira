@@ -1,9 +1,9 @@
 
 # Web Scraping com a plataforma SUCUPIRA                       
 
-#######################
+
 ## Pacotes necessários:
-#######################
+
 library(RSelenium)
 library(xml2)
 library(rvest)
@@ -56,7 +56,7 @@ extract.links <- function(xpath.vector) {
   return(links.vector)
 }
 
-## Sub-função que navega para a página do i-ésimo programa e extraí as informações de interesse :
+## Função que navega para a página do i-ésimo programa e extraí as informações de interesse :
 navigate.to_pages <- function(page.count) {
   
   ## Interage com todas páginas :
@@ -177,10 +177,7 @@ Sys.sleep(2)
 
 ## Aqui ficarão guardadas todas as nossas informações de interesse :
 Sucupira.Data <<- list()
-
-## Número de páginas
 n.pages <- calculate.pages()
-
 navigate.to_pages(page.count = n.pages$N_paginas)
 
 
